@@ -1,0 +1,26 @@
+
+<?php /* $myQuery = new WP_Query( 'post_status=any&post_type=attachment&order=DESC' ); ?>
+
+<?php if ($myQuery -> have_posts()) : ?>
+    <?php while ($myQuery -> have_posts()) : $myQuery -> the_post(); ?>
+       <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+       <?php the_title(); ?>
+       <?php the_content(); ?>
+       </div>
+	<?php endwhile; ?>
+<?php endif; ?>
+<?php wp_reset_query(); */ ?>
+
+
+<?php $myQuery = new WP_Query( 'post_status=published&post_type=movies&order=DESC' ); ?>
+
+<?php if ($myQuery -> have_posts()) : ?>
+    <?php while ($myQuery -> have_posts()) : $myQuery -> the_post(); ?>
+       <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+       <?php the_title(); ?>
+       <?php the_content(); ?>
+       </div>
+        <?php endwhile; ?>
+<?php endif; ?>
+<?php wp_reset_query(); ?>
+
